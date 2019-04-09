@@ -1,6 +1,6 @@
-var sendForm = document.querySelector('#chatform'),
+/*var sendForm = document.querySelector('#chatform'),
     textInput = document.querySelector('.chatbox'),
-    chatList = document.querySelector('.chatlist'),
+   ,
     userBubble = document.querySelectorAll('.userInput'),
     botBubble = document.querySelectorAll('.bot__output'),
     animateBotBubble = document.querySelectorAll('.bot__input--animation'),
@@ -18,24 +18,29 @@ var sendForm = document.querySelector('#chatform'),
      ' <li class="bot__output bot__output--standard">¿En qué puedo ayudarte?</li>'+
      '   <div class="bot__output bot__output--standard "><button class="btn btn-light btn-radius">tengo un problema</button><button class="btn btn-light btn-radius">necesito algo</button></div>'
 */
+/*incorporando mensaje de bienvenida y quick replies */
+let  chatList = document.querySelector('.chatlist');
      chatList.innerHTML=`<li class="bot__output bot__output--standard">Hola, Melissa</li>
      <li class="bot__output bot__output--standard">¿En qué puedo ayudarte?</li>
      <div class="quick-replies">
      <div class="sliders">
-
-    
       <div class="slides">
         <div id="slide-1">
-          <button type="button" class="btn btn-replies">Tengo un problema</button>
+          <button id="necesito" type="button" class="btn btn-replies">Tengo un problema</button>
           <button type="button" class="btn btn-replies">Necesito algo</button>
           <button type="button" class="btn btn-replies">Contraseñas</button>
         </div>
-   
-
       </div>
     </div>
-     </div>
+  </div>
      ` ;
+
+     let firstButton = document.getElementById('necesito');
+     firstButton.addEventListener('click',createBubble );
+     function createBubble(){
+       alert('hola')
+     chatList.insertAdjacentHTML("beforeend",`<li class="userInput">Tengo un problema</li>`);
+     }
 sendForm.onkeydown = function(e){
   if(e.keyCode == 13){
     e.preventDefault();

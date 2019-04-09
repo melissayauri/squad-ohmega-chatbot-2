@@ -89,7 +89,9 @@ img[alt="logo-canvia"] {
     position: relative;
     
 }
-
+.chatlist .userInput{
+    right: 0.5rem;
+}
 
 .chatlist .bot__output, .chatlist .quick-replies {
     align-self: flex-start;
@@ -118,6 +120,7 @@ img[alt="logo-canvia"] {
     left: -16px;
     top: 0px;
 }
+
 /*
 .chatlist .bot__output:after {
   
@@ -137,6 +140,19 @@ img[alt="logo-canvia"] {
     animation-delay: 1800ms;
     animation-play-state: running;
 }
+
+.userInput:after{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid #f1f3f4;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f1f3f4;
+    border-bottom: 10px solid transparent;
+    right: -12px;
+    top: 0px;
+}
 /*
 .chatlist .bot__output--standard:last-child {
     display: block;
@@ -147,16 +163,18 @@ img[alt="logo-canvia"] {
 }
 */
 @keyframes animateBubble {
-    0% {
+  /* 0% {
         transform: translateY(-20%);
         opacity: 0;
-    }
+    }*/
 
     100% {
-        transform: translateY(0 );
+        transform: translateY(0);
+       
         opacity: 1;
        
     }
+   /* 75%  {background-color:green; left:0px; top:-60px;opacity: 0;}*/
    
 }
 /*****quick replies***/
@@ -180,6 +198,10 @@ img[alt="logo-canvia"] {
     background-color: #ff7400;
     color: white;
 }
+.btn-replies:focus{
+    background-color: #ff7400;
+    color: white;
+}
 ::-webkit-scrollbar {
     width: 0.65em;
     /* for vertical scrollbars */
@@ -198,6 +220,7 @@ img[alt="logo-canvia"] {
     .slides{
       width: 90vw;
     }
+}
 @media (min-width: 600px) {
     .block-background {
         /*background-color: #363636;*/
@@ -207,4 +230,6 @@ img[alt="logo-canvia"] {
 }
 
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+
+}
