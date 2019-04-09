@@ -1,0 +1,90 @@
+/*
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+*/
+/*
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;*/
+  /*background-color: #363636;*/
+  /*
+}*/
+
+
+
+.chatlist .userInput {
+  text-transform: lowercase;
+  box-shadow: 1px 1px 2px #666;
+  border-top: 4px solid #cc8914;
+  opacity: 0;
+  animation-name: animateBubble;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+.chatlist .bot__output:last-child {
+  display: none;
+}
+.chatlist .bot__command {
+  color: #f5f5f5;
+  color: #27ae60;
+  font-weight: 600;
+  padding: 0.1em;
+}
+
+
+.chatlist .bot__output--second-sentence {
+  display: block;
+}
+.chatlist .bot__outputImage {
+  max-width: 16em;
+  height: 12em;
+}
+
+
+#chatform {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  max-width: 35em;
+  margin: 0 auto;
+  padding-top: 1em;
+  font-size: 1em;
+  font-family: Helvetica;
+}
+@media screen and (max-width: 29em) {
+  #chatform {
+    width: 90%;
+  }
+}
+
+
+/**********melissa*******/
+.btn-radius{
+  margin-right: 0.5rem;
+  text-transform: lowercase;
+}

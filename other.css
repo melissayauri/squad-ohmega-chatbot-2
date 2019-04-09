@@ -1,0 +1,83 @@
+/****input*/
+.chatbox-area {
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+}
+
+textarea[name="chatbox"] {
+    resize: none;
+    border: 2px solid #27ae60;
+    border-right: 0;
+    width: 70%;
+    background-color: transparent;
+    color: #fff;
+    height: 3em;
+    margin: 0;
+    padding: 0.75em;
+    border-radius: 8px 0px 0px 8px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+textarea[name="chatbox"]:focus {
+    outline: none;
+    border: 2px solid #4bd786;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #fff;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #fff;
+    opacity: 1;
+}
+
+input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    width: 25%;
+    margin: 0;
+    background-color: #27ae60;
+    color: #fff;
+    border: 2px solid #27ae60;
+    border-left: 0;
+    border-radius: 0 8px 8px 0;
+    font-family: inherit;
+    font-size: 1em;
+    transition: 200ms all ease-in;
+}
+
+input[type="submit"]:hover {
+    background-color: #4bd786;
+    border-color: #4bd786;
+    color: #fff;
+}
+
+.input__nested-list {
+    list-style: disc;
+    list-style-position: inside;
+    padding: 0.5em;
+}
+
+.input__nested-list:first-child {
+    padding-top: 1em;
+}
+
+.input__nested-link {
+    color: #2ecc71;
+    text-decoration: none;
+    border-bottom: 1px solid #2ecc71;
+}

@@ -1,0 +1,197 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.out{
+    outline: 1px solid #ff7400;
+}
+.out-blue{
+    outline: 1px solid blue;
+}
+body{
+    color: rgba(0,0,0,0.87);
+}
+
+/*******caja de chatbot*****/
+.block-background {
+    /*background-color: #363636;*/
+    width: 100%;
+
+    /*border: 1px solid #d5dde0;*/
+    border: 1px solid orange;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 998;
+    background-color: white;
+    min-height: 100vh;
+}
+/****header chatbot****/
+.chatbot-header {
+    background-image: url(assets/fondo-orange.PNG);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 32vh;
+    /* border-bottom:  1px solid #d5dde0;  */
+}
+
+.chatbot-header div {
+    display: block;
+    margin: auto;
+    width: 25%;
+}
+
+img[alt="logo-canvia"] {
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid #f1f3f4;
+    margin-top: 2rem;
+
+}
+/****body chatbot***/
+.chatbot__overview {
+    /*background-color: #363636;*/
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: space-between;
+    /*min-height: 80vh;
+    max-height: 80vh;*/
+    margin: 0 auto;
+    padding: 1em;
+    padding-bottom: 0;
+    height: 250px;
+    /*overflow-y: scroll;*/
+}
+
+.chatlist {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    overflow-x: hidden;
+   width: 100%;
+     /*max-width: 35em;*/
+    max-height: 75vh;
+    /*margin: 0 auto;*/
+}
+
+.chatlist .userInput,.chatlist .bot__output {
+    padding: 0.85em;
+    margin: 0.5em;
+    max-width: 100%;
+    background-color: #f1f3f4;
+    border-radius: 5px;
+    position: relative;
+    
+}
+
+
+.chatlist .bot__output, .chatlist .quick-replies {
+    align-self: flex-start;
+    /*box-shadow: -1px 1px 2px #666;
+    border-top: 4px solid #27ae60;*/
+    will-change: auto;
+    height: auto;
+    opacity: 0;
+    animation-name: animateBubble;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    
+   
+}
+.chatlist .bot__output:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 9px solid transparent;
+    border-right: 9px solid #f1f3f4;
+    /*border-top: 15px solid #f1f3f4;;*/
+    border-bottom: 15px solid transparent;
+    left: -16px;
+    top: 0px;
+}
+/*
+.chatlist .bot__output:after {
+  
+}*/
+
+.chatlist .bot__output:nth-child(1) {
+    animation-delay: 900ms;
+    animation-play-state: running;
+}
+
+.chatlist .bot__output:nth-child(2) {
+    animation-delay: 1200ms;
+    animation-play-state: running;
+}
+
+.chatlist .quick-replies {
+    animation-delay: 1800ms;
+    animation-play-state: running;
+}
+/*
+.chatlist .bot__output--standard:last-child {
+    display: block;
+}
+
+.chatlist .bot__output--failed {
+    display: block !important;
+}
+*/
+@keyframes animateBubble {
+    0% {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0 );
+        opacity: 1;
+       
+    }
+   
+}
+/*****quick replies***/
+/*.btn.chip{
+    text-transform: lowercase;
+    background-color: #f1f3f4;
+    color: rgba(0,0,0,0.87);
+    margin-right: 1rem;
+}
+.btn.chip:hover{
+    background-color: #ff7400;
+}
+*/
+::-webkit-scrollbar {
+    width: 0.65em;
+    /* for vertical scrollbars */
+    height: 0.65em;
+    /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 600px) {
+    .block-background {
+        /*background-color: #363636;*/
+        width: 50%;
+    }
+ 
+}
+
+
+@media (min-width: 992px) {}
