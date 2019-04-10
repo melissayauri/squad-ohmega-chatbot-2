@@ -1,6 +1,6 @@
-/*var sendForm = document.querySelector('#chatform'),
+var sendForm = document.querySelector('#chatform'),
     textInput = document.querySelector('.chatbox'),
-   ,
+   
     userBubble = document.querySelectorAll('.userInput'),
     botBubble = document.querySelectorAll('.bot__output'),
     animateBotBubble = document.querySelectorAll('.bot__input--animation'),
@@ -35,12 +35,16 @@ let  chatList = document.querySelector('.chatlist');
   </div>
      ` ;
 
-     let firstButton = document.getElementById('necesito');
+     /*let firstButton = document.getElementById('necesito');
      firstButton.addEventListener('click',createBubble );
      function createBubble(){
        alert('hola')
      chatList.insertAdjacentHTML("beforeend",`<li class="userInput">Tengo un problema</li>`);
+     chatList.insertAdjacentHTML("beforeend",`<li class="bot__output bot__output--failed">Ups</li>`);
+     animateBotOutput();
      }
+*/
+
 sendForm.onkeydown = function(e){
   if(e.keyCode == 13){
     e.preventDefault();
@@ -55,7 +59,7 @@ sendForm.onkeydown = function(e){
   }
 };
 
-sendForm.addEventListener('submit', function(e) {
+/*sendForm.addEventListener('submit', function(e) {
   //so form doesnt submit page (no page refresh)
   e.preventDefault();
 
@@ -66,7 +70,7 @@ sendForm.addEventListener('submit', function(e) {
   if(input.length > 0) {
     createBubble(input)
   }
-}) //end of eventlistener
+}) //end of eventlistener*/
 
 var createBubble = function(input) {
   //create input bubble
@@ -78,7 +82,7 @@ var createBubble = function(input) {
 
   //adds chatBubble to chatlist
   chatList.appendChild(chatBubble)
-
+  //botResponse(textVal);
   checkInput(input);
 }
 
@@ -86,9 +90,9 @@ var checkInput = function(input) {
   hasCorrectInput = false;
   isReaction = false;
   //Checks all text values in possibleInput
-  for(var textVal in possibleInput){
+  /*for(var textVal in possibleInput){
     //If user reacts with "yes" and the previous input was in textVal
-    if(input == "yes" || input.indexOf("yes") >= 0){
+    /*if(input == "yes" || input.indexOf("yes") >= 0){
       if(previousInput == textVal) {
         console.log("sausigheid");
 
@@ -96,31 +100,34 @@ var checkInput = function(input) {
         hasCorrectInput = true;
         botResponse(textVal);
       }
-    }
+    }*/
+    /*
     if(input == "no" && previousInput == textVal){
       unkwnCommReaction = "For a list of commands type: Commands";
       unknownCommand("I'm sorry to hear that :(")
       unknownCommand(unkwnCommReaction);
       hasCorrectInput = true;
-    }
+    }*/
     //Is a word of the input also in possibleInput object?
-    if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
+    /*if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
 			console.log("succes");
       hasCorrectInput = true;
       botResponse(textVal);
 		}
-	}
+	}*/
   //When input is not in possibleInput
   if(hasCorrectInput == false){
     console.log("failed");
     unknownCommand(unkwnCommReaction);
     hasCorrectInput = true;
   }
+ 
 }
 
 // debugger;
 
 function botResponse(textVal) {
+  alert('ddd')
   //sets previous input to that what was called
   // previousInput = input;
 
@@ -240,12 +247,12 @@ function commandReset(e){
 var possibleInput = {
   // "hlep" : this.help(),
   "help" : function(){
-    responseText("You can type a command in the chatbox")
-    responseText("Something like &quot;Navvy, please show me Mees&rsquo; best work&quot;")
+    responseText("necesito ayuda")
+    /*responseText("Something like &quot;Navvy, please show me Mees&rsquo; best work&quot;")
     responseText("Did you find a bug or problem? Tweet me @MeesRttn")
-    commandReset(0);
+    commandReset(0);*/
     return
-    },
+  }/*,
   "best work" : function(){
     responseText("I will show you Mees' best work!");
     responseText("These are his <a href='#animation'>best animations</a>")
@@ -331,5 +338,5 @@ var reactionInput = {
     responseText("Combine Motion Design with Front-End");
     animationCounter = 1;
     return
-    }
+    }*/
 }
