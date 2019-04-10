@@ -101,9 +101,9 @@ img[alt="logo-canvia"] {
     height: auto;
     opacity: 0;
     animation-name: animateBubble;
-    animation-duration: 400ms;
+    animation-duration: 700ms;
     animation-iteration-count: 1;
-    animation-play-state: paused;
+    /*animation-play-state: paused;*/
     animation-fill-mode: forwards;
     
    
@@ -168,12 +168,20 @@ img[alt="logo-canvia"] {
         opacity: 0;
     }*/
 
-    100% {
+    /*100% {
         transform: translateY(0);
        
         opacity: 1;
        
-    }
+    }*/
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+     }
+     100% {
+        opacity: 1;
+        transform: translateY(0);
+     }
    /* 75%  {background-color:green; left:0px; top:-60px;opacity: 0;}*/
    
 }
