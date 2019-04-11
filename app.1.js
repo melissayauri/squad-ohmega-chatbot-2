@@ -20,20 +20,28 @@ var sendForm = document.querySelector('#chatform'),
 */
 /*incorporando mensaje de bienvenida y quick replies */
 let  chatList = document.querySelector('.chatlist');
-     chatList.innerHTML=`<li class="bot__output bot__output--standard">Hola, Melissa</li>
-     <li class="bot__output bot__output--standard">¿En qué puedo ayudarte?</li>
-     <div class="quick-replies">
-     <div class="sliders">
-      <div class="slides">
-        <div id="slide-1">
-          <button id="necesito" type="button" class="btn btn-replies">Tengo un problema</button>
-          <button type="button" class="btn btn-replies">Necesito algo</button>
-          <button type="button" class="btn btn-replies">Contraseñas</button>
-        </div>
-      </div>
-    </div>
-  </div>
-     ` ;
+     chatList.innerHTML=`
+     <div class="div-chatbot">
+     <div class="chatbot-header">
+     <img class="responsive-img" src="assets/fondo-orange.PNG" alt="backg-canvia">
+    <!-- <div>
+       <img class="responsive-img" src="assets/logo-canvia.png" alt="logo-canvia">
+     </div>-->
+   </div>
+   </div>
+    <li class="bot__output-1 bot__output--standard">Hola, Melissa</li>
+    <li class="bot__output-1 bot__output--standard">¿En qué puedo ayudarte?</li>
+    <div class="quick-replies">
+    <div class="sliders">
+     <div class="slides">
+       <div id="slide-1">
+         <button id="necesito" type="button" class="btn btn-replies">Tengo un problema</button>
+         <button type="button" class="btn btn-replies">Necesito algo</button>
+         <button type="button" class="btn btn-replies">Contraseñas</button>
+       </div>
+     </div>
+   </div>
+ </div>` ;
 
      let firstButton = document.getElementById('necesito');
      firstButton.addEventListener('click',create );
@@ -84,6 +92,7 @@ sendForm.onkeydown = function(e){
 }) //end of eventlistener*/
 
 var createBubble = function(input) {
+  alert('createbubble')
   //create input bubble
   var chatBubble = document.createElement('li');
   chatBubble.classList.add('userInput');
@@ -143,6 +152,10 @@ function botResponse(textVal) {
   //create response bubble
   var userBubble = document.createElement('li');
   userBubble.classList.add('bot__output');
+  animateBotOutput();
+  for(var textVal in possibleInput){
+    console.log(Object.keys(possibleInput))
+  }
 
   /*if(isReaction == true){
      if (typeof reactionInput[textVal] === "function") {
@@ -152,7 +165,7 @@ function botResponse(textVal) {
       userBubble.innerHTML = reactionInput[textVal];
     }
   }*/
-
+/*
   if(isReaction == false){
     //Is the command a function?
     if (typeof possibleInput[textVal] === "function") {
@@ -162,8 +175,8 @@ function botResponse(textVal) {
       userBubble.innerHTML = possibleInput[textVal]();
     } /*else {
       userBubble.innerHTML = possibleInput[textVal];
-    }*/
-  }
+    }
+  }*/
   //userBubble.innerHTML = 'Ups'
   //add list item to chatlist
   chatList.appendChild(userBubble) //adds chatBubble to chatlist
@@ -188,7 +201,7 @@ function unknownCommand(unkwnCommReaction) {
   // reset text area input
   textInput.value = "";
 
-  //Sets chatlist scroll to bottom
+  //scroll mientras los mensajes se incorporan
   chatList.scrollTop = chatList.scrollHeight;
 
   animationCounter = 1;
@@ -257,16 +270,16 @@ var possibleInput = {
     responseText("Something like &quot;Navvy, please show me Mees&rsquo; best work&quot;");
     
     //commandReset(1);
-    return
-  }/*,
+    //return
+  },
   "best work" : function(){
     responseText("I will show you Mees' best work!");
     responseText("These are his <a href='#animation'>best animations</a>")
     responseText("These are his <a href='#projects'>best projects</a>")
     responseText("Would you like to see how I was built? (Yes/No)")
-    commandReset(1);
-    return
-    },
+    //commandReset(1);
+    //return
+  }/*,
   "about" : function(){
     responseText("This is me, Navvy's maker, Mees Rutten");
     responseText("I'm a 22 year old Communication and Multimedia Design student");

@@ -34,24 +34,52 @@ body{
 }
 /****header chatbot****/
 .chatbot-header {
-    background-image: url(assets/fondo-orange.PNG);
+    /*background-image: url(assets/fondo-orange.PNG);
     background-repeat: no-repeat;
     background-size: 100%;
+    min-height: 32vh;
     height: 32vh;
-    /* border-bottom:  1px solid #d5dde0;  */
+    max-height: 36vh;*/
+    outline: 1px solid red;
 }
 
-.chatbot-header div {
+.div-chatbot{
+    width: 100%;
+    height: auto;
+    outline: 1px solid blue;
+}
+.logo{
+    outline: 1px solid red;
+    /*position: relative;
+    bottom:70%;*/
+    /*position: absolute;
+    top:9%;*/
+    /*bottom: 50%;*/
+}
+/*
+.cont-img {
+    position: relative;
     display: block;
     margin: auto;
     width: 25%;
+    top: -50%;
+}*/
+/*
+img[ alt="backg-canvia"]{
+    height: 50vh;
 }
-
+*/
 img[alt="logo-canvia"] {
+    /*position: relative;*/
+    width: 25%;
+    /*top: -50%;
+    right: -36%;*/
     border-radius: 50%;
     background-color: white;
     border: 5px solid #f1f3f4;
-    margin-top: 2rem;
+    display: block;
+    margin: auto;
+    /*margin-top: 2rem;*/
 
 }
 /****body chatbot***/
@@ -63,9 +91,9 @@ img[alt="logo-canvia"] {
     /*min-height: 80vh;
     max-height: 80vh;*/
     margin: 0 auto;
-    padding: 1em;
+    /*padding: 1em;*/
     padding-bottom: 0;
-    height: 250px;
+    /*height: 250px;*/
     /*overflow-y: scroll;*/
 }
 
@@ -82,7 +110,7 @@ img[alt="logo-canvia"] {
     
 }
 
-.chatlist .userInput,.chatlist .bot__output {
+.chatlist .userInput,.chatlist .bot__output,.chatlist .bot__output-1 {
     padding: 0.85em;
     margin: 0.5em;
     max-width: 100%;
@@ -94,8 +122,21 @@ img[alt="logo-canvia"] {
 .chatlist .userInput{
     right: 0.5rem;
 }
+.chatlist .bot__output-1, .chatlist .quick-replies{
+    align-self: flex-start;
+    /*box-shadow: -1px 1px 2px #666;
+    border-top: 4px solid #27ae60;*/
+    will-change: auto;
+    height: auto;
+    opacity: 0;
+    animation-name: animateBubble;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    /*animation-play-state: paused;*/
+    animation-fill-mode: forwards;
+}
 
-.chatlist .bot__output, .chatlist .quick-replies {
+.chatlist .bot__output{
     align-self: flex-start;
     /*box-shadow: -1px 1px 2px #666;
     border-top: 4px solid #27ae60;*/
@@ -109,6 +150,18 @@ img[alt="logo-canvia"] {
     animation-fill-mode: forwards;
     
    
+}
+.chatlist .bot__output-1:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 9px solid transparent;
+    border-right: 9px solid #f1f3f4;
+    /*border-top: 15px solid #f1f3f4;;*/
+    border-bottom: 15px solid transparent;
+    left: -16px;
+    top: 0px;
 }
 .chatlist .bot__output:after {
     content: "";
@@ -128,21 +181,22 @@ img[alt="logo-canvia"] {
   
 }*/
 
-.chatlist .bot__output:nth-child(1) {
+.chatlist .bot__output-1:nth-child(2) {
     animation-delay: 1s;
     /*animation-delay: 4s;*/
     animation-play-state: running;
 }
 
-.chatlist .bot__output:nth-child(2) {
+.chatlist  .bot__output-1:nth-child(3) {
     /*animation-delay: 6s;*/
-   animation-delay: 2s;
+   animation-delay: 3s;
     animation-play-state: running;
+    
 }
 
 .chatlist .quick-replies {
     /*animation-delay: 8s;*/
-    animation-delay: 3s;
+    animation-delay: 5s;
     animation-play-state: running;
 }
 
@@ -158,7 +212,7 @@ img[alt="logo-canvia"] {
     right: -12px;
     top: 0px;
 }
-/*
+
 .chatlist .bot__output--standard:last-child {
     display: block;
 }
@@ -166,7 +220,33 @@ img[alt="logo-canvia"] {
 .chatlist .bot__output--failed {
     display: block !important;
 }
-*/
+
+@keyframes animateBubble1 {
+    /* 0% {
+          transform: translateY(-20%);
+          opacity: 0;
+      }*/
+  
+      /*100% {
+          transform: translateY(0);
+         
+          opacity: 1;
+         
+      }*/
+      0% {
+          opacity: 0;
+          transform: translateY(0);
+       }
+       100% {
+          opacity: 1;
+          transform: translateY(-70px);
+       }
+     /* 75%  {background-color:green; left:0px; top:-60px;opacity: 0;}*/
+     
+  }
+.representative{
+    outline: 1px solid red
+}
 @keyframes animateBubble {
   /* 0% {
         transform: translateY(-20%);
@@ -181,11 +261,11 @@ img[alt="logo-canvia"] {
     }*/
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(0);
      }
      100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-10%);
      }
    /* 75%  {background-color:green; left:0px; top:-60px;opacity: 0;}*/
    
@@ -231,8 +311,32 @@ img[alt="logo-canvia"] {
 }
 @media (min-width: 321px) {
     .slides{
-      width: 90vw;
+      width: 97vw;
     }
+    /*.chatbot-header {
+        height: 36vh;
+    }*/
+    .div-chatbot {
+     
+       /* height: 28vh;*/
+    }
+}
+
+@media (min-width: 375px) {
+    /*.chatbot-header {
+        height: 25vh;
+    }*/
+    .div-chatbot {
+        width: 100%;
+       /* height: 38vh;*/
+    }
+
+}
+@media (min-width: 425px) {
+    .div-chatbot {
+        /*height: 33vh;*/
+    }
+
 }
 @media (min-width: 600px) {
     .block-background {
